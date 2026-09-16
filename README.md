@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portafolio — Jeferson Cano
 
-## Getting Started
+Arquitectura de experiencia premium (Next.js 14 · GSAP · Lenis · React Three Fiber): preloader, cordillera 3D, scroll cinematográfico y casos de estudio.
 
-First, run the development server:
+## Correr
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contenido
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Editá solo:
 
-## Learn More
+- `src/data/profile.ts` — identidad, logros, trayectoria
+- `src/data/site.ts` — hero, servicios, enfoque
+- `src/data/projects.ts` — EcoBuild, ROBOKIT, FREEPOL, etc.
 
-To learn more about Next.js, take a look at the following resources:
+Foto About: reemplazá `public/portrait.webp` por tu foto (mismo nombre).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vercel · `next build` (export estático). Sin env vars.
