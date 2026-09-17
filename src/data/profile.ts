@@ -85,7 +85,7 @@ export const milestones = [
     label: "Producto",
     title: "Colaborador · FREEPOL",
     text: "Documentación, B.I.M.O. y apoyo en mecánicas de campaña en Hyper Reality.",
-    image: "/work/freepol-ui.webp",
+    image: "/projects/saas.webp",
   },
   {
     year: "May 2026",
@@ -161,17 +161,21 @@ export const interests = [
   {
     title: "Música",
     text: "$uicideboy$, Deftones, Pantera, Xavier Wulf, Ken Carson, Playboi Carti, JOJI.",
+    image: "/art/music.webp",
   },
   {
     title: "Juegos",
     text: "Cyberpunk 2077, Ultrakill, Sekiro, Red Dead Redemption 2.",
+    image: "/art/persona5.webp",
   },
   {
     title: "Arte",
     text: "Dibujo digital, personajes y narrativa visual (NARCIX55).",
+    image: "/art/blade-runner.webp",
   },
   {
     title: "Música / prod",
     text: "FL Studio cuando no estoy en el editor.",
+    image: "/art/miku.webp",
   },
 ] as const;

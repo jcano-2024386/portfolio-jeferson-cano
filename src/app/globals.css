@@ -75,36 +75,11 @@ a {
 }
 
 .vignette {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 50;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 40%,
-    rgba(0, 0, 0, 0.45) 100%
-  );
-  opacity: 0.55;
+  display: none;
 }
 
 .bottom-blur {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 140px;
-  pointer-events: none;
-  z-index: 40;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(8, 8, 8, 0.55) 45%,
-    rgba(8, 8, 8, 0.97) 100%
-  );
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  mask-image: linear-gradient(to bottom, transparent, black 55%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 55%);
+  display: none;
 }
 
 .hero-perspective {

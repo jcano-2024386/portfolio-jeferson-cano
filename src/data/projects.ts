@@ -115,7 +115,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Supabase", "Redis", "Claude"],
     repo: "https://github.com/jcano-2024386",
     visual: "blue",
-    cover: "/work/freepol-ui.webp",
+    cover: "/projects/saas.webp",
     result: "En producción",
   },
   {

@@ -350,19 +350,18 @@ function Stats() {
     const ctx = gsap.context(() => {
       gsap.from(".stat-item", {
         scrollTrigger: { trigger: ref.current, start: "top 88%", once: true },
-        y: 48,
-        opacity: 0,
-        rotateX: 8,
+        y: 36,
         stagger: 0.1,
-        duration: 0.8,
+        duration: 0.7,
         ease: "power3.out",
+        clearProps: "transform",
       });
       gsap.from(".stat-banner", {
         scrollTrigger: { trigger: ref.current, start: "top 88%", once: true },
-        y: 24,
-        opacity: 0,
-        duration: 0.7,
+        y: 20,
+        duration: 0.6,
         ease: "power3.out",
+        clearProps: "transform",
       });
     }, ref);
     return () => ctx.revert();
@@ -553,21 +552,12 @@ function FreepolSpotlight() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".fp-block", {
-        scrollTrigger: { trigger: ref.current, start: "top 82%", once: true },
-        y: 40,
-        opacity: 0,
-        stagger: 0.09,
-        duration: 0.75,
+        scrollTrigger: { trigger: ref.current, start: "top 85%", once: true },
+        y: 32,
+        stagger: 0.08,
+        duration: 0.7,
         ease: "power3.out",
-      });
-      gsap.from(".fp-metric", {
-        scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
-        y: 18,
-        opacity: 0,
-        stagger: 0.06,
-        duration: 0.55,
-        delay: 0.25,
-        ease: "power2.out",
+        clearProps: "transform",
       });
     }, ref);
     return () => ctx.revert();
@@ -578,120 +568,75 @@ function FreepolSpotlight() {
     "Entrenamiento B.I.M.O.",
     "Mecánicas de campaña",
     "WhatsApp · Telegram · TikTok",
-    "Ruleta · Rasca · Puntos · OCR",
-  ];
-
-  const metrics = [
-    { k: "SaaS", v: "B2B lealtad" },
-    { k: "Rol", v: "Docs + IA" },
-    { k: "Estado", v: "Producción" },
-    { k: "Canales", v: "WA · TG · TT" },
   ];
 
   return (
     <section ref={ref} className="section-pad py-12 md:py-16">
-      <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a0a0a]">
-        <div className="pointer-events-none absolute inset-0 grid-fade opacity-60" />
-        <div className="pointer-events-none absolute -right-24 -top-24 size-[520px] rounded-full bg-[#ff6b1a]/20 blur-[120px]" />
-        <div className="pointer-events-none absolute -bottom-32 -left-20 size-[360px] rounded-full bg-cyan-400/15 blur-[110px]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#ff6b1a]/60 to-transparent" />
+      <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0c0c0c]">
+        <div className="pointer-events-none absolute -right-16 top-0 size-[380px] rounded-full bg-[#ff6b1a]/20 blur-[100px]" />
 
-        <div className="relative grid items-stretch gap-0 lg:grid-cols-12">
-          {/* Copy + métricas */}
-          <div className="fp-block flex flex-col justify-between gap-8 p-7 md:p-10 lg:col-span-5 lg:p-12">
-            <div>
-              <div className="mb-5 flex items-center gap-3">
-                <span className="pulse-dot size-2 rounded-full bg-[#ff6b1a]" />
-                <p className="text-[10px] font-medium uppercase tracking-[0.5em] text-[#ff6b1a]">
-                  Producto real · Hyper Reality
-                </p>
-              </div>
-              <h2
-                className="font-black leading-[0.88] tracking-tighter text-white"
-                style={{ fontSize: "clamp(2.6rem, 5.5vw, 4.6rem)" }}
-              >
-                FREEPOL
-                <span className="block ghost text-[0.7em]">/ B.I.M.O.</span>
-              </h2>
-              <p className="mt-5 max-w-md text-sm leading-relaxed text-white/55 md:text-[15px]">
-                Documentación del SaaS de lealtad y entrenamiento del asistente
-                B.I.M.O.: ruleta, rasca y gana, puntos, OCR e integraciones
-                multicanal.
+        <div className="relative grid items-stretch lg:grid-cols-12">
+          <div className="fp-block flex flex-col justify-center gap-6 p-7 md:p-10 lg:col-span-5 lg:p-12">
+            <div className="flex items-center gap-3">
+              <span className="pulse-dot size-2 rounded-full bg-[#ff6b1a]" />
+              <p className="text-[10px] font-medium uppercase tracking-[0.5em] text-[#ff6b1a]">
+                Producto real · Hyper Reality
               </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {chips.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-white/12 bg-white/[0.04] px-3 py-1.5 text-[9px] uppercase tracking-widest text-white/55 backdrop-blur-sm transition-colors hover:border-[#ff6b1a]/40 hover:text-white"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <Link
-                href="/proyectos/freepol"
-                className="btn-shine mt-8 inline-flex items-center gap-2 rounded-full bg-[#ff6b1a] px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest text-black transition-colors hover:bg-white"
-              >
-                Ver caso de estudio <ArrowUpRight className="size-3.5" />
-              </Link>
             </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              {metrics.map((m) => (
-                <div
-                  key={m.k}
-                  className="fp-metric rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur-sm"
+            <h2
+              className="font-black leading-[0.88] tracking-tighter text-white"
+              style={{ fontSize: "clamp(2.6rem, 5.5vw, 4.4rem)" }}
+            >
+              FREEPOL
+              <span className="block ghost text-[0.7em]">/ B.I.M.O.</span>
+            </h2>
+            <p className="max-w-md text-sm leading-relaxed text-white/60 md:text-[15px]">
+              Documentación del SaaS de lealtad y entrenamiento del asistente
+              B.I.M.O. — sin capturas de onboarding ajenas: el foco es el
+              producto, la IA y las mecánicas de campaña.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {chips.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-1.5 text-[9px] uppercase tracking-widest text-white/65"
                 >
-                  <p className="text-[9px] uppercase tracking-[0.35em] text-white/35">{m.k}</p>
-                  <p className="mt-1.5 text-sm font-semibold text-white">{m.v}</p>
-                </div>
+                  {item}
+                </span>
               ))}
             </div>
+            <Link
+              href="/proyectos/freepol"
+              className="btn-shine inline-flex w-fit items-center gap-2 rounded-full bg-[#ff6b1a] px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest text-black transition-colors hover:bg-white"
+            >
+              Ver caso de estudio <ArrowUpRight className="size-3.5" />
+            </Link>
           </div>
 
-          {/* Escena visual densa — sin hueco muerto */}
-          <div className="fp-block relative min-h-[420px] overflow-hidden border-t border-white/10 lg:col-span-7 lg:min-h-[560px] lg:border-l lg:border-t-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#141414] via-[#0c0c0c] to-[#101018]" />
-            <div className="pointer-events-none absolute inset-0 opacity-40 [background:radial-gradient(circle_at_70%_40%,rgba(255,107,26,0.25),transparent_55%)]" />
-
-            {/* Mockup principal */}
-            <div className="absolute inset-0 flex items-center justify-center p-6 md:p-10">
-              <div className="relative w-full max-w-md">
-                <div className="pointer-events-none absolute -inset-[2px] rounded-[2rem] opacity-70 fp-glow-ring blur-[1px]" />
-                <TiltCard tiltAmount={10} className="relative w-full">
-                  <div className="relative aspect-[9/11] overflow-hidden rounded-[1.75rem] border border-white/20 bg-white shadow-[0_50px_100px_rgba(0,0,0,0.65)]">
-                    <Image
-                      src={asset("/work/freepol-ui.webp")}
-                      alt="FREEPOL — interfaz de registro"
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 768px) 90vw, 42vw"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent p-5">
-                      <p className="text-[10px] uppercase tracking-[0.3em] text-[#ff6b1a]">
-                        UI · Onboarding
-                      </p>
-                      <p className="mt-1 text-sm font-semibold text-white">
-                        Flujos reales del producto
-                      </p>
-                    </div>
-                  </div>
-                </TiltCard>
-
-                {/* Badges flotantes */}
-                <div className="float-y absolute -left-3 top-10 hidden rounded-2xl border border-white/15 bg-black/70 px-4 py-3 backdrop-blur-md md:block">
-                  <p className="text-[9px] uppercase tracking-[0.3em] text-white/40">Asistente</p>
-                  <p className="mt-1 text-sm font-bold text-white">B.I.M.O.</p>
+          <div className="fp-block relative min-h-[320px] lg:col-span-7 lg:min-h-[480px]">
+            <Image
+              src={asset("/projects/saas.webp")}
+              alt="FREEPOL — producto SaaS"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 58vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0c0c0c] via-[#0c0c0c]/40 to-transparent lg:from-[#0c0c0c]/90" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-3 md:bottom-8 md:left-8">
+              {[
+                { k: "Rol", v: "Docs + IA" },
+                { k: "Estado", v: "Producción" },
+                { k: "Stack", v: "Next · Supabase" },
+              ].map((m) => (
+                <div
+                  key={m.k}
+                  className="rounded-xl border border-white/15 bg-black/55 px-4 py-3 backdrop-blur-md"
+                >
+                  <p className="text-[9px] uppercase tracking-[0.3em] text-white/45">{m.k}</p>
+                  <p className="mt-1 text-sm font-semibold text-white">{m.v}</p>
                 </div>
-                <div className="float-y-delay absolute -right-2 bottom-24 hidden rounded-2xl border border-[#ff6b1a]/40 bg-[#ff6b1a] px-4 py-2.5 shadow-[0_0_40px_rgba(255,107,26,0.35)] md:block">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-black">
-                    En producción
-                  </p>
-                </div>
-                <div className="float-y absolute -right-4 top-1/3 hidden rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-[10px] uppercase tracking-widest text-white/80 backdrop-blur md:block">
-                  Docs + IA
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -829,11 +774,11 @@ function Work() {
             start: "top 92%",
             toggleActions: "play none none none",
           },
-          y: 50,
-          opacity: 0,
-          duration: 0.75,
+          y: 40,
+          duration: 0.7,
           delay: (i % 3) * 0.05,
           ease: "power3.out",
+          clearProps: "transform",
         });
       });
     }, ref);
@@ -890,7 +835,7 @@ function Work() {
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes={index === 0 ? "66vw" : "33vw"}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
               <div className="absolute left-4 top-4 flex gap-2">
                 <span className="rounded-full bg-black/50 px-2.5 py-1 font-mono text-[10px] text-white/60 backdrop-blur">
                   {project.index}
@@ -944,30 +889,17 @@ function Work() {
 function Path() {
   const ref = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
-  const listRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const steps = listRef.current?.querySelectorAll<HTMLElement>(".path-item");
-      if (!steps) return;
-      const triggers = Array.from(steps).map((step, index) =>
-        ScrollTrigger.create({
-          trigger: step,
-          start: "top 55%",
-          end: "bottom 55%",
-          onEnter: () => setActive(index),
-          onEnterBack: () => setActive(index),
-        }),
-      );
       gsap.from(".path-item", {
-        scrollTrigger: { trigger: ref.current, start: "top 80%", once: true },
-        x: -20,
-        opacity: 0,
-        stagger: 0.08,
-        duration: 0.65,
+        scrollTrigger: { trigger: ref.current, start: "top 85%", once: true },
+        y: 24,
+        stagger: 0.06,
+        duration: 0.55,
         ease: "power3.out",
+        clearProps: "transform",
       });
-      return () => triggers.forEach((t) => t.kill());
     }, ref);
     return () => ctx.revert();
   }, []);
@@ -976,9 +908,7 @@ function Path() {
 
   return (
     <section id="path" ref={ref} className="section-pad relative py-16 md:py-24">
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 grid-fade opacity-40 lg:block" />
-
-      <div className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
+      <div className="mb-8 flex flex-col gap-3 md:mb-10 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.5em] text-[#ff6b1a]">
             Trajectory
@@ -990,64 +920,44 @@ function Path() {
             El camino
           </h2>
         </div>
-        <p className="max-w-xs text-sm text-white/40">
-          Scroll o click en cada hito — la foto cambia en vivo.
+        <p className="max-w-xs text-sm text-white/55">
+          Click en cada hito — la foto cambia al instante.
         </p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
-        <div ref={listRef} className="relative lg:col-span-5">
-          <div className="absolute bottom-4 left-[11px] top-4 w-px bg-gradient-to-b from-[#ff6b1a] via-[#ff6b1a]/35 to-transparent" />
-          <div className="space-y-3">
-            {milestones.map((item, index) => (
-              <button
-                key={item.title}
-                type="button"
-                onClick={() => setActive(index)}
-                className={`path-item relative w-full pl-12 text-left transition-all duration-400 md:pl-14 ${
-                  active === index ? "opacity-100" : "opacity-40 hover:opacity-75"
-                }`}
-              >
-                <div
-                  className={`absolute left-1.5 top-3 size-4 rounded-full border-4 border-[#080808] transition-all ${
-                    active === index
-                      ? "scale-110 bg-[#ff6b1a] shadow-[0_0_22px_rgba(255,107,26,0.55)]"
-                      : "bg-white/30"
-                  }`}
-                />
-                <div
-                  className={`rounded-2xl border p-3.5 transition-all md:p-4 ${
-                    active === index
-                      ? "border-[#ff6b1a]/35 bg-[#ff6b1a]/5"
-                      : "border-transparent hover:border-white/10 hover:bg-white/[0.03]"
-                  }`}
-                >
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-mono text-[11px] text-[#ff6b1a]">{item.year}</span>
-                    <span className="text-[9px] uppercase tracking-[0.3em] text-white/30">
-                      {item.label}
-                    </span>
-                  </div>
-                  <h3 className="mt-1 text-base font-bold text-white md:text-lg">{item.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-white/45">{item.text}</p>
-                </div>
-              </button>
-            ))}
-          </div>
+        <div className="space-y-2 lg:col-span-5">
+          {milestones.map((item, index) => (
+            <button
+              key={item.title}
+              type="button"
+              onClick={() => setActive(index)}
+              className={`path-item relative w-full rounded-2xl border p-4 text-left transition-all ${
+                active === index
+                  ? "border-[#ff6b1a]/50 bg-[#ff6b1a]/10"
+                  : "border-white/10 bg-white/[0.03] hover:border-white/25"
+              }`}
+            >
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-mono text-[11px] text-[#ff6b1a]">{item.year}</span>
+                <span className="text-[9px] uppercase tracking-[0.3em] text-white/45">
+                  {item.label}
+                </span>
+              </div>
+              <h3 className="mt-1.5 text-base font-bold text-white md:text-lg">{item.title}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-white/60">{item.text}</p>
+            </button>
+          ))}
         </div>
 
         <div className="lg:col-span-7">
-          <div className="sticky top-24 overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0c0c0c] shadow-[0_40px_80px_rgba(0,0,0,0.45)]">
-            <Spotlight
-              className="from-[#ff6b1a]/25 via-[#ff6b1a]/10 to-transparent blur-2xl"
-              size={280}
-            />
-            <div className="relative aspect-[16/12] w-full md:aspect-[16/11]">
+          <div className="overflow-hidden rounded-[1.75rem] border border-white/15 bg-[#111]">
+            <div className="relative aspect-[16/11] w-full">
               {milestones.map((item, index) => (
                 <div
                   key={item.image}
-                  className={`absolute inset-0 transition-all duration-700 ${
-                    index === active ? "scale-100 opacity-100" : "scale-105 opacity-0"
+                  className={`absolute inset-0 transition-opacity duration-500 ${
+                    index === active ? "opacity-100" : "pointer-events-none opacity-0"
                   }`}
                 >
                   <Image
@@ -1056,8 +966,9 @@ function Path() {
                     fill
                     className="object-cover"
                     sizes="55vw"
+                    priority={index === 0}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 </div>
               ))}
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 md:p-8">
@@ -1067,23 +978,20 @@ function Path() {
                   </p>
                   <p className="mt-2 text-2xl font-black text-white md:text-3xl">{current.title}</p>
                 </div>
-                <span className="rounded-full border border-white/15 bg-black/40 px-3 py-1.5 font-mono text-sm text-white/60 backdrop-blur">
+                <span className="rounded-full border border-white/20 bg-black/55 px-3 py-1.5 font-mono text-sm text-white">
                   {String(active + 1).padStart(2, "0")} /{" "}
                   {String(milestones.length).padStart(2, "0")}
                 </span>
               </div>
             </div>
-            {/* Mini thumbs */}
-            <div className="flex gap-2 overflow-x-auto border-t border-white/10 bg-black/40 p-3">
+            <div className="flex gap-2 overflow-x-auto border-t border-white/10 bg-[#0a0a0a] p-3">
               {milestones.map((item, index) => (
                 <button
                   key={`thumb-${item.image}`}
                   type="button"
                   onClick={() => setActive(index)}
-                  className={`relative h-14 w-20 shrink-0 overflow-hidden rounded-lg border transition-all ${
-                    active === index
-                      ? "border-[#ff6b1a] opacity-100"
-                      : "border-white/10 opacity-45 hover:opacity-80"
+                  className={`relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border transition-all ${
+                    active === index ? "border-[#ff6b1a]" : "border-white/15 opacity-70 hover:opacity-100"
                   }`}
                 >
                   <Image
@@ -1091,7 +999,7 @@ function Path() {
                     alt=""
                     fill
                     className="object-cover"
-                    sizes="80px"
+                    sizes="96px"
                   />
                 </button>
               ))}
@@ -1104,52 +1012,39 @@ function Path() {
 }
 
 function Interests() {
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".interest-card", {
-        scrollTrigger: { trigger: ref.current, start: "top 85%", once: true },
-        y: 28,
-        opacity: 0,
-        stagger: 0.08,
-        duration: 0.65,
-        ease: "power3.out",
-      });
-    }, ref);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={ref} className="section-pad relative overflow-hidden border-t border-white/5 py-16 md:py-20">
-      <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(ellipse_at_30%_0%,rgba(255,107,26,0.18),transparent_50%)]" />
-      <div className="relative mb-8 flex flex-col gap-3 md:mb-10 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.5em] text-[#ff6b1a]">
-            Outside code
-          </p>
-          <h2 className="text-3xl font-black tracking-tighter text-white md:text-5xl">
-            Lo que me mueve
-          </h2>
-        </div>
+    <section className="section-pad relative border-t border-white/10 py-16 md:py-20">
+      <div className="mb-8 md:mb-10">
+        <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.5em] text-[#ff6b1a]">
+          Outside code
+        </p>
+        <h2 className="text-3xl font-black tracking-tighter text-white md:text-5xl">
+          Lo que me mueve
+        </h2>
       </div>
-      <div className="relative grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {interests.map((item, index) => (
-          <div
+          <article
             key={item.title}
-            className="interest-card group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-5 transition-all duration-500 hover:-translate-y-1 hover:border-[#ff6b1a]/40"
+            className="group relative overflow-hidden rounded-2xl border border-white/15 bg-[#111]"
           >
-            <Spotlight
-              className="from-[#ff6b1a]/30 via-[#ff6b1a]/10 to-transparent blur-2xl"
-              size={180}
-            />
-            <span className="font-mono text-[10px] text-white/25">
-              0{index + 1}
-            </span>
-            <h3 className="mt-3 text-lg font-bold text-white">{item.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-white/40">{item.text}</p>
-            <div className="mt-5 h-px w-10 bg-[#ff6b1a]/50 transition-all group-hover:w-full" />
-          </div>
+            <div className="relative aspect-[4/5] w-full">
+              <Image
+                src={asset(item.image)}
+                alt={item.title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
+              <div className="absolute inset-x-0 bottom-0 p-5">
+                <span className="font-mono text-[10px] text-[#ff6b1a]">0{index + 1}</span>
+                <h3 className="mt-2 text-xl font-bold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/75">{item.text}</p>
+              </div>
+            </div>
+          </article>
         ))}
       </div>
     </section>
@@ -1264,7 +1159,6 @@ function Footer() {
 
 export function HomeExperience() {
   const [started, setStarted] = useState(false);
-  const blurWrapRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
   const handleComplete = useCallback(() => setStarted(true), []);
 
@@ -1278,13 +1172,6 @@ export function HomeExperience() {
 
     lenis.on("scroll", () => {
       ScrollTrigger.update();
-      if (blurWrapRef.current && footerRef.current) {
-        const footerTop = footerRef.current.getBoundingClientRect().top;
-        const vh = window.innerHeight;
-        blurWrapRef.current.style.opacity = String(
-          footerTop >= vh ? 1 : Math.max(0, footerTop / vh),
-        );
-      }
     });
 
     const tick = (time: number) => lenis.raf(time * 1000);
@@ -1302,11 +1189,9 @@ export function HomeExperience() {
     <main className="bg-[#080808] text-white">
       <Preloader onComplete={handleComplete} />
       <div className="grain-overlay" />
-      <div className="vignette" />
       <ScrollProgress />
       <Cursor />
       <Navbar started={started} />
-      <div ref={blurWrapRef} className="bottom-blur" />
 
       <div className={`relative z-10 transition-opacity duration-700 ${started ? "opacity-100" : "opacity-0"}`}>
         <Hero started={started} />

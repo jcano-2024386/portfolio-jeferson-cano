@@ -40,7 +40,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       : project.slug === "robokit"
         ? [project.cover, "/work/cursor-hackathon.webp"]
         : project.slug === "freepol"
-          ? [project.cover, "/work/freepol-ui.webp"]
+          ? [project.cover, "/projects/saas.webp", "/work/github-profile.webp"]
           : [project.cover];
 
   return (

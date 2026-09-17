@@ -117,7 +117,7 @@ export const projectCovers: Record<string, string> = {
   "01": "/work/ecobuild-hero.webp",
   "02": "/work/robokit-ufg.webp",
   "03": "/work/cursor-hackathon.webp",
-  "04": "/work/freepol-ui.webp",
+  "04": "/projects/saas.webp",
   "05": "/work/github-profile.webp",
   "06": "/work/ecobuild-info.webp",
 };

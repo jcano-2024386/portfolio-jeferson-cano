@@ -40,5 +40,4 @@ next-env.d.ts
 _backup-data/
 _li.txt
 _ml.json
-scripts/
 *.log
